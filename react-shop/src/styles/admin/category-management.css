@@ -1,0 +1,682 @@
+/* 🎨 Category Management - Modern Admin Theme với Dark Mode */
+.category-management {
+  padding: 2rem;
+  background: linear-gradient(135deg, #f6f9ff 0%, #e8f0f9 100%);
+  color: #1b2b3a;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* 🌙 Dark Mode */
+.category-management.dark-mode {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #e2e8f0;
+}
+
+.category-management.dark-mode .page-title {
+  background: linear-gradient(135deg, #60a5fa, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 8px rgba(96, 165, 250, 0.3);
+}
+
+/* 🔹 Tiêu đề trang */
+.page-title {
+  text-align: center;
+  color: #1976d2;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(21, 101, 192, 0.2);
+}
+
+/* 🔍 Header với filter và button */
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.filter-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.filter-section label {
+  font-weight: 600;
+  color: #1e3a8a;
+  white-space: nowrap;
+}
+
+.category-management.dark-mode .filter-section label {
+  color: #e2e8f0;
+}
+
+.filter-select {
+  padding: 0.6rem 0.9rem;
+  border: 1px solid rgba(150, 180, 210, 0.8);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #1b2b3a;
+  font-size: 0.9rem;
+  min-width: 200px;
+  transition: all 0.3s ease;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #1976d2;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.15);
+}
+
+.category-management.dark-mode .filter-select {
+  background: rgba(45, 55, 72, 0.9);
+  border-color: #4a5568;
+  color: #e2e8f0;
+}
+
+.add-btn {
+  background: linear-gradient(135deg, #2196f3, #1976d2);
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px 0px ;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width:290px !important;
+}
+
+.add-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(25, 118, 210, 0.3);
+}
+
+/* 📊 Table Styles - GIỮ NGUYÊN NHƯ CSS CŨ */
+.categories-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(150, 170, 200, 0.3);
+  border: 1px solid rgba(200, 215, 230, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+.categories-table th {
+  background: rgba(230, 240, 255, 0.8);
+  color: #1565c0;
+  padding: 1rem;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-bottom: 2px solid rgba(21, 101, 192, 0.3);
+}
+
+.categories-table td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(200, 215, 230, 0.6);
+  text-align: left;
+  vertical-align: middle;
+  color: #1b2b3a;
+}
+
+.categories-table tr:hover {
+  background: rgba(179, 229, 252, 0.25);
+  transition: all 0.3s ease;
+}
+
+.categories-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* 🌙 Dark Mode cho bảng - GIỮ TÔNG MÀU TƯƠNG TỰ */
+.category-management.dark-mode .categories-table {
+  background: rgba(45, 55, 72, 0.95);
+  border-color: rgba(74, 85, 104, 0.6);
+}
+
+.category-management.dark-mode .categories-table th {
+  background: rgba(66, 153, 225, 0.2);
+  color: #90cdf4;
+  border-bottom-color: rgba(66, 153, 225, 0.3);
+}
+
+.category-management.dark-mode .categories-table td {
+  border-bottom-color: rgba(74, 85, 104, 0.6);
+  color: #e2e8f0;
+}
+
+.category-management.dark-mode .categories-table tr:hover {
+  background: rgba(66, 153, 225, 0.15);
+}
+
+/* 🎯 Badges và Status */
+.root-badge {
+  background: linear-gradient(135deg, #2196f3, #1976d2);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  margin-left: 8px;
+  font-weight: 600;
+}
+
+.unknown {
+  color: #f44336;
+  font-style: italic;
+}
+
+.category-management.dark-mode .unknown {
+  color: #fc8181;
+}
+
+/* 🔘 Action Buttons - GIỮ NGUYÊN NHƯ CSS CŨ */
+.action-buttons {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.action-btn {
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  margin: 0 0.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.action-btn.save {
+  background: linear-gradient(135deg, #2196f3, #1976d2);
+  color: white;
+}
+
+.action-btn.cancel {
+  background: linear-gradient(135deg, #9e9e9e, #757575);
+  color: white;
+}
+
+.action-btn.edit {
+  background: linear-gradient(135deg, #42a5f5, #1e88e5);
+  color: white;
+}
+
+.action-btn.delete {
+  background: linear-gradient(135deg, #f44336, #d32f2f);
+  color: white;
+}
+
+.action-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(25, 118, 210, 0.3);
+}
+
+/* 🪟 Modal/Popup Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 0;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 18px rgba(150, 170, 200, 0.3);
+  border: 1px solid rgba(200, 215, 230, 0.6);
+  animation: modalSlideIn 0.3s ease-out;
+  backdrop-filter: blur(10px);
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(200, 215, 230, 0.6);
+  background: rgba(230, 240, 255, 0.8);
+}
+
+.modal-header h3 {
+  color: #1565c0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #64748b;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #f44336;
+  background: rgba(244, 67, 54, 0.1);
+}
+
+/* 📝 Form trong Modal */
+.category-form {
+  padding: 30px 90px;
+  width:100% !important;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: #1565c0;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(180, 200, 230, 0.8);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #1b2b3a;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #1976d2;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.15);
+}
+
+.form-actions {
+  text-align: right;
+  margin-top: 1rem;
+}
+
+/* 🎯 Toast Notification Styles */
+.Toastify__toast {
+  border-radius: 12px !important;
+  box-shadow: 0 4px 18px rgba(150, 170, 200, 0.3) !important;
+  border: 1px solid rgba(200, 215, 230, 0.6) !important;
+  font-family: "Poppins", sans-serif !important;
+  min-height: 70px !important;
+  backdrop-filter: blur(10px);
+}
+
+.Toastify__toast--success {
+  background: linear-gradient(135deg, #4caf50, #2e7d32) !important;
+  color: white !important;
+}
+
+.Toastify__toast--error {
+  background: linear-gradient(135deg, #f44336, #c62828) !important;
+  color: white !important;
+}
+
+.Toastify__toast--warning {
+  background: linear-gradient(135deg, #ff9800, #ef6c00) !important;
+  color: white !important;
+}
+
+.Toastify__toast--info {
+  background: linear-gradient(135deg, #2196f3, #1565c0) !important;
+  color: white !important;
+}
+
+.Toastify__progress-bar {
+  background: rgba(255, 255, 255, 0.7) !important;
+  height: 3px !important;
+}
+
+.Toastify__close-button {
+  color: white !important;
+  opacity: 0.8 !important;
+  transition: all 0.2s ease !important;
+}
+
+.Toastify__close-button:hover {
+  opacity: 1 !important;
+  transform: scale(1.1) !important;
+}
+
+.Toastify__toast-body {
+  padding: 8px 4px !important;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 968px) {
+  .category-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+  
+  .filter-section {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 768px) {
+  .category-management {
+    padding: 1rem;
+  }
+  
+  .categories-table {
+    font-size: 0.8rem;
+  }
+  
+  .categories-table th,
+  .categories-table td {
+    padding: 0.8rem 0.6rem;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .modal {
+    margin: 1rem;
+  }
+}
+
+/* 🎯 Loading & Empty States */
+.loading,
+.empty-msg {
+  text-align: center;
+  color: #6b7c8c;
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.no-data {
+  text-align: center;
+  color: #6b7c8c;
+  font-style: italic;
+  padding: 2rem;
+}
+
+/* 🔹 Danh mục con (hiển thị lùi đầu dòng) */
+.sub-category {
+  padding-left: 2rem !important;
+  color: #1e3a5f;
+  font-weight: 500;
+}
+
+.sub-category:hover {
+  background: rgba(187, 222, 251, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* 🔹 Parent ID, ngày tháng */
+.parent-id {
+  color: #6b7c8c;
+  font-style: italic;
+}
+
+.date-cell {
+  color: #6b7c8c;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+/* 🌙 Dark Mode cho các phần khác */
+.category-management.dark-mode .modal {
+  background: rgba(45, 55, 72, 0.95);
+  border-color: rgba(74, 85, 104, 0.6);
+}
+
+.category-management.dark-mode .modal-header {
+  background: rgba(66, 153, 225, 0.2);
+  border-bottom-color: rgba(74, 85, 104, 0.6);
+}
+
+.category-management.dark-mode .modal-header h3 {
+  color: #90cdf4;
+}
+
+.category-management.dark-mode .form-group label {
+  color: #90cdf4;
+}
+
+.category-management.dark-mode .form-group input,
+.category-management.dark-mode .form-group textarea,
+.category-management.dark-mode .form-group select {
+  background: rgba(74, 85, 104, 0.8);
+  border-color: #4a5568;
+  color: #e2e8f0;
+}
+
+.category-management.dark-mode .form-group input:focus,
+.category-management.dark-mode .form-group textarea:focus,
+.category-management.dark-mode .form-group select:focus {
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+}
+
+.category-management.dark-mode .loading,
+.category-management.dark-mode .empty-msg,
+.category-management.dark-mode .no-data {
+  color: #a0aec0;
+}
+
+.category-management.dark-mode .sub-category {
+  color: #cbd5e0;
+}
+
+.category-management.dark-mode .sub-category:hover {
+  background: rgba(66, 153, 225, 0.15);
+}
+
+.category-management.dark-mode .parent-id,
+.category-management.dark-mode .date-cell {
+  color: #a0aec0;
+}
+
+
+/* 🎯 CATE-VALIDATION - Real-time Form Validation */
+.cate-validation .form-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.cate-validation .validation-message {
+  color: #dc3545;
+  font-size: 12px;
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 18px;
+  font-weight: 500;
+  padding-left: 4px;
+  transition: all 0.3s ease;
+}
+
+.cate-validation .validation-message.success {
+  color: #28a745;
+}
+
+.cate-validation .validation-message.warning {
+  color: #ffc107;
+}
+
+.cate-validation .input-error {
+  border: 1px solid #dc3545 !important;
+  background-color: #fff5f5 !important;
+  box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.1) !important;
+}
+
+.cate-validation .input-success {
+  border: 1px solid #28a745 !important;
+  background-color: #f8fff9 !important;
+}
+
+.cate-validation .input-warning {
+  border: 1px solid #ffc107 !important;
+  background-color: #fffef0 !important;
+}
+
+/* 🔄 Validation Animation */
+.cate-validation .validation-pulse {
+  animation: cateValidationPulse 0.6s ease-in-out;
+}
+
+@keyframes cateValidationPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+
+/* 📱 Responsive Validation */
+@media (max-width: 768px) {
+  .cate-validation .validation-message {
+    font-size: 11px;
+    margin-top: 4px;
+    gap: 4px;
+  }
+}
+
+
+/* 📄 CATE-PAGINATION - Pagination Styles */
+.cate-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.cate-pagination button {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(200, 215, 230, 0.8);
+  color: #1b2b3a;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  min-width: 40px;
+  text-align: center;
+}
+
+.cate-pagination button:hover:not(:disabled) {
+  background: rgba(25, 118, 210, 0.1);
+  border-color: #1976d2;
+  transform: translateY(-1px);
+}
+
+.cate-pagination button.active {
+  background: linear-gradient(135deg, #2196f3, #1976d2);
+  color: white;
+  border-color: #1976d2;
+}
+
+.cate-pagination button:disabled {
+  background: rgba(200, 215, 230, 0.5);
+  color: #9e9e9e;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.cate-pagination-info {
+  text-align: center;
+  color: #6b7c8c;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* 🌙 Dark Mode cho Pagination */
+.category-management.dark-mode .cate-pagination button {
+  background: rgba(74, 85, 104, 0.9);
+  border-color: #4a5568;
+  color: #e2e8f0;
+}
+
+.category-management.dark-mode .cate-pagination button:hover:not(:disabled) {
+  background: rgba(66, 153, 225, 0.2);
+  border-color: #4299e1;
+}
+
+.category-management.dark-mode .cate-pagination button.active {
+  background: linear-gradient(135deg, #4299e1, #3182ce);
+  color: white;
+  border-color: #4299e1;
+}
+
+.category-management.dark-mode .cate-pagination button:disabled {
+  background: rgba(74, 85, 104, 0.5);
+  color: #a0aec0;
+}
+
+.category-management.dark-mode .cate-pagination-info {
+  color: #a0aec0;
+}
+
+/* 📱 Responsive Pagination */
+@media (max-width: 768px) {
+  .cate-pagination {
+    gap: 0.25rem;
+  }
+  
+  .cate-pagination button {
+    padding: 0.4rem 0.8rem;
+    min-width: 36px;
+    font-size: 0.8rem;
+  }
+  
+  .cate-pagination-info {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,255 @@
+/* ===========================
+   🌙 User Management (Dark Mode)
+   =========================== */
+.user-management.dark-mode {
+  background: linear-gradient(135deg, #f6f9ff 0%, #e8f0f9 100%);
+  color: #1b2b3a;
+  padding: 2rem;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===========================
+      📌 Title
+   =========================== */
+.page-title {
+  text-align: center;
+  color: #1976d2;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(21, 101, 192, 0.2);
+}
+
+/* ===========================
+      📌 Users Table
+   =========================== */
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(150, 170, 200, 0.3);
+  border: 1px solid rgba(200, 215, 230, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+.users-table th,
+.users-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid rgba(200, 215, 230, 0.6);
+  text-align: left;
+}
+
+.users-table th {
+  background: rgba(230, 240, 255, 0.8);
+  color: #1565c0;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-bottom: 2px solid rgba(21, 101, 192, 0.3);
+}
+
+.users-table tr:hover {
+  background: rgba(179, 229, 252, 0.3);
+  transition: all 0.3s ease;
+}
+
+.users-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* ===========================
+      📌 Status badges
+   =========================== */
+.status-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.status-badge.active {
+  background: rgba(76, 175, 80, 0.15);
+  color: #2e7d32;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.status-badge.inactive {
+  background: rgba(244, 67, 54, 0.15);
+  color: #c62828;
+  border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+/* ===========================
+      📌 Action buttons
+   =========================== */
+.action-btn {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+  margin: 0 0.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.action-btn.activate {
+  background: linear-gradient(135deg, #4caf50, #388e3c);
+  color: #fff;
+}
+
+.action-btn.deactivate {
+  background: linear-gradient(135deg, #f44336, #d32f2f);
+  color: #fff;
+}
+
+.action-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.action-btn:active {
+  transform: translateY(0);
+}
+
+/* ===========================
+      📌 Loading
+   =========================== */
+.loading {
+  text-align: center;
+  color: #1976d2;
+  font-size: 1.1rem;
+  padding: 2rem;
+}
+
+.empty-msg {
+  margin-top: 20px;
+  text-align: center;
+  color: #6b7c8c;
+  font-style: italic;
+  padding: 2rem;
+}
+
+/* ===========================
+      📌 Role badges
+   =========================== */
+.role-badge {
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.role-badge.admin {
+  background: rgba(244, 67, 54, 0.15);
+  color: #c62828;
+  border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+.role-badge.user {
+  background: rgba(76, 175, 80, 0.15);
+  color: #2e7d32;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.role-badge.moderator {
+  background: rgba(255, 152, 0, 0.15);
+  color: #ef6c00;
+  border: 1px solid rgba(255, 152, 0, 0.3);
+}
+
+/* ============================================================
+      ✅ FIX LỖI CHECKBOX KHÔNG CLICK ĐƯỢC + LÀM ĐẸP CHECKBOX
+   ============================================================ */
+
+.roles-checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.checkbox-label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 42px;   /* chừa chỗ cho checkbox */
+  font-size: 14px;
+  color: #1565c0;
+  font-weight: 600;
+  cursor: pointer;
+  background: #f0f5ffb3;
+  border-radius: 8px;
+  border: 1px solid #c7ddf8;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+/* checkbox thật */
+.checkbox-label input[type="checkbox"] {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  opacity: 0; /* Ẩn checkbox nhưng vẫn nhận click */
+  z-index: 5;
+}
+
+/* checkmark decor */
+.checkbox-label .checkmark {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border: 2px solid #1565c0;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  pointer-events: none; /* quan trọng */
+}
+
+.checkbox-label:hover .checkmark {
+  border-color: #0d47a1;
+}
+
+.checkbox-label input:checked ~ .checkmark {
+  background-color: #1565c0;
+  border-color: #0d47a1;
+}
+
+.checkbox-label input:checked ~ .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 1px;
+  width: 5px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+/* FIX QUAN TRỌNG: Cho phép click phần tử input bên trong label */
+.checkbox-label {
+  position: relative;
+  cursor: pointer;
+  pointer-events: none;     /* label KHÔNG bắt click */
+}
+
+.checkbox-label input {
+  pointer-events: auto;     /* input checkbox BẮT click bình thường */
+  position: relative;
+  z-index: 10;
+}

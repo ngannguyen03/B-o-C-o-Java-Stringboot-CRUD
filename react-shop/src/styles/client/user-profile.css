@@ -1,0 +1,484 @@
+/* 🎨 User Profile - Blue Elegant Theme */
+.profile-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(30, 64, 175, 0.08);
+  border: 1px solid #e2e8f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: fadeInUp 0.5s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1e40af, #3b82f6, #60a5fa);
+}
+
+.profile-title {
+  text-align: center;
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.profile-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-row {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.profile-row label {
+  font-weight: 600;
+  color: #1e3a8a;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.profile-row label::before {
+  content: '•';
+  color: #3b82f6;
+  font-size: 1.2rem;
+}
+
+.profile-row input {
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1.5px solid #e2e8f0;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  color: #1e3a8a;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.profile-row input:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  background: #ffffff;
+  transform: translateY(-1px);
+}
+
+.profile-row input:disabled {
+  background: linear-gradient(145deg, #f1f5f9, #f8fafc);
+  color: #64748b;
+  border-color: #e2e8f0;
+  cursor: not-allowed;
+}
+
+.profile-row input:not(:disabled):hover {
+  border-color: #bfdbfe;
+}
+
+/* 🎯 Status Styles */
+.status {
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  text-align: center;
+  display: inline-block;
+  width: fit-content;
+  margin-top: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.status.active {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+}
+
+.status.inactive {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+}
+
+.profile-row:hover .status {
+  transform: scale(1.05);
+}
+
+/* 🔘 Action Buttons */
+.profile-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #e2e8f0;
+}
+
+button {
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+.edit-btn {
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+  color: #ffffff;
+}
+
+.edit-btn:hover {
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.save-btn {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #ffffff;
+}
+
+.save-btn:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+.cancel-btn {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: #ffffff;
+}
+
+.cancel-btn:hover {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+}
+
+button:active {
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  background: linear-gradient(135deg, #94a3b8, #64748b);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+button:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* 📱 Loading & Error States */
+.loading,
+.error {
+  text-align: center;
+  padding: 60px 40px;
+  font-size: 1.3rem;
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  border-radius: 20px;
+  margin: 40px auto;
+  max-width: 500px;
+  box-shadow: 0 8px 32px rgba(30, 64, 175, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+.loading {
+  color: #3b82f6;
+  background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+}
+
+.error {
+  color: #ef4444;
+  background: linear-gradient(135deg, #fef2f2, #fee2e2);
+}
+
+/* ✨ Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.profile-container {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.loading {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .profile-container {
+    margin: 20px 16px;
+    padding: 32px 24px;
+  }
+  
+  .profile-title {
+    font-size: 1.8rem;
+  }
+  
+  .profile-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-container {
+    padding: 24px 20px;
+  }
+  
+  .profile-title {
+    font-size: 1.6rem;
+  }
+  
+  .profile-row input {
+    padding: 12px 14px;
+  }
+  
+  .profile-actions {
+    margin-top: 24px;
+    padding-top: 20px;
+  }
+}
+
+/* 🎨 Success Message Animation */
+@keyframes successPulse {
+  0%, 100% {
+    box-shadow: 0 8px 32px rgba(30, 64, 175, 0.08);
+  }
+  50% {
+    box-shadow: 0 8px 32px rgba(16, 185, 129, 0.2);
+  }
+}
+
+.profile-container.success {
+  animation: successPulse 2s ease-in-out;
+}
+
+/* 🔄 Focus States for Accessibility */
+.profile-row input:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+button:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* 🌟 Enhanced Hover Effects */
+.profile-row:hover label {
+  color: #1e40af;
+  transition: color 0.3s ease;
+}
+
+.profile-row:hover input:not(:disabled) {
+  border-color: #93c5fd;
+  transition: border-color 0.3s ease;
+}
+
+
+/* 🎯 Toast Notification Styles */
+.Toastify__toast {
+  border-radius: 12px !important;
+  box-shadow: 0 8px 32px rgba(30, 64, 175, 0.15) !important;
+  border: 1px solid #e2e8f0 !important;
+  font-family: 'Segoe UI', sans-serif !important;
+  min-height: 70px !important;
+}
+
+.Toastify__toast--success {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+  color: white !important;
+}
+
+.Toastify__toast--error {
+  background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+  color: white !important;
+}
+
+.Toastify__toast--warning {
+  background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+  color: white !important;
+}
+
+.Toastify__toast--info {
+  background: linear-gradient(135deg, #3b82f6, #1e40af) !important;
+  color: white !important;
+}
+
+.Toastify__progress-bar {
+  background: rgba(255, 255, 255, 0.7) !important;
+  height: 3px !important;
+}
+
+.Toastify__close-button {
+  color: white !important;
+  opacity: 0.8 !important;
+  transition: all 0.2s ease !important;
+}
+
+.Toastify__close-button:hover {
+  opacity: 1 !important;
+  transform: scale(1.1) !important;
+}
+
+.Toastify__toast-body {
+  padding: 8px 4px !important;
+}
+
+/* 🎨 Success Animation */
+@keyframes successGlow {
+  0%, 100% {
+    box-shadow: 0 8px 32px rgba(30, 64, 175, 0.08);
+  }
+  50% {
+    box-shadow: 0 8px 32px rgba(16, 185, 129, 0.2);
+  }
+}
+
+.profile-container.success {
+  animation: successGlow 2s ease-in-out;
+}
+
+/* 📱 Responsive Toast */
+@media (max-width: 768px) {
+  .Toastify__toast {
+    margin: 8px !important;
+    border-radius: 10px !important;
+  }
+  
+  .Toastify__toast-body {
+    font-size: 14px !important;
+  }
+}
+
+/* ✨ Enhanced Form Interactions */
+.profile-row input:valid {
+  border-color: #10b981;
+}
+
+.profile-row input:invalid:not(:placeholder-shown) {
+  border-color: #ef4444;
+}
+
+/* 🎯 Loading State Enhancement */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.loading::after {
+  content: '';
+  width: 40px;
+  height: 40px;
+  border: 3px solid #3b82f6;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 🌟 Enhanced Status Styles */
+.status {
+  position: relative;
+  overflow: hidden;
+}
+
+.status::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.status:hover::before {
+  left: 100%;
+}

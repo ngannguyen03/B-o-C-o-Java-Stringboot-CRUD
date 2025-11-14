@@ -1,0 +1,431 @@
+/* 🎨 Order History Page - Blue Elegant Theme */
+.order-history-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  background: linear-gradient(135deg, #f8fbff, #f0f7ff);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 🏷️ Page Title */
+.order-title {
+  text-align: center;
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.order-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+}
+
+/* 📦 Order List */
+.order-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+/* 🎴 Order Card */
+.order-card {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  border-radius: 20px;
+  padding: 0;
+  box-shadow: 0 8px 32px rgba(30, 64, 175, 0.08);
+  border: 1px solid #e2e8f0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.order-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa, #93c5fd);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.order-card:hover::before {
+  transform: scaleX(1);
+}
+
+.order-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 20px 50px rgba(30, 64, 175, 0.15),
+    0 0 0 1px rgba(59, 130, 246, 0.1);
+}
+
+/* 🏷️ Order Header */
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 28px 16px;
+  border-bottom: 1px solid #e2e8f0;
+  background: linear-gradient(145deg, #f8fafc, #ffffff);
+}
+
+.order-header h3 {
+  color: #1e3a8a;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+/* 🎯 Status Tags */
+.status-tag {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.status-tag.delivered {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+}
+
+.status-tag.processing {
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+  color: white;
+}
+
+.status-tag.pending {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+}
+
+.status-tag.cancelled {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+}
+
+.order-card:hover .status-tag {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 📊 Order Body - FIXED LAYOUT */
+.order-body {
+  padding: 20px 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 20px;
+}
+
+.order-body p {
+  margin: 0;
+  color: #4b5563;
+  font-size: 1rem;
+  line-height: 1.5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+
+/* 🎯 Đảm bảo các cặp label-value nằm đúng vị trí */
+.order-body p:nth-child(1) { /* Ngày đặt */
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.order-body p:nth-child(2) { /* Tổng tiền */
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.order-body p:nth-child(3) { /* Giảm giá */
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.order-body p:nth-child(4) { /* Thành tiền - QUAN TRỌNG */
+  grid-column: 1 / span 2; /* Chiếm cả 2 cột */
+  grid-row: 3;
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  margin: 12px -28px -20px;
+  padding: 16px 28px;
+  border-radius: 0 0 20px 20px;
+  font-weight: 700;
+  border-top: 1px solid #e2e8f0;
+}
+
+.order-body strong {
+  color: #1e3a8a;
+  font-weight: 600;
+  min-width: 100px;
+}
+
+.order-body span {
+  color: #1e40af;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* 🎨 Styling cho Thành tiền */
+.order-body p:nth-child(4) strong {
+  color: #1e40af;
+  font-size: 1.1rem;
+}
+
+.order-body p:nth-child(4) span {
+  color: #1e40af;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* 🔘 Order Footer */
+.order-footer {
+  padding: 20px 28px;
+  border-top: 1px solid #e2e8f0;
+  background: linear-gradient(145deg, #f8fafc, #ffffff);
+  border-radius: 0 0 20px 20px;
+  text-align: center;
+}
+
+.btn-detail {
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-detail::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-detail:hover::before {
+  left: 100%;
+}
+
+.btn-detail:hover {
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.btn-detail:active {
+  transform: translateY(0);
+}
+
+/* 📱 Loading & Empty States */
+.order-loading,
+.order-empty {
+  text-align: center;
+  padding: 80px 40px;
+  font-size: 1.3rem;
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  border-radius: 20px;
+  margin: 40px auto;
+  max-width: 600px;
+  box-shadow: 0 8px 32px rgba(30, 64, 175, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+.order-loading {
+  color: #3b82f6;
+  background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+}
+
+.order-empty {
+  color: #64748b;
+  background: linear-gradient(145deg, #f8fafc, #f1f5f9);
+  border: 2px dashed #cbd5e1;
+}
+
+/* ✨ Animation Effects */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.order-card {
+  animation: fadeInUp 0.6s ease both;
+}
+
+/* Stagger animation for order cards */
+.order-card:nth-child(1) { animation-delay: 0.1s; }
+.order-card:nth-child(2) { animation-delay: 0.2s; }
+.order-card:nth-child(3) { animation-delay: 0.3s; }
+.order-card:nth-child(4) { animation-delay: 0.4s; }
+.order-card:nth-child(5) { animation-delay: 0.5s; }
+.order-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* 📱 Responsive Design */
+@media (max-width: 968px) {
+  .order-list {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .order-history-page {
+    padding: 32px 16px;
+  }
+  
+  .order-title {
+    font-size: 2rem;
+    margin-bottom: 32px;
+  }
+  
+  .order-list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .order-header {
+    padding: 20px 24px 16px;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+  
+  .order-body {
+    padding: 16px 24px;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  .order-body p {
+    flex-direction: column;
+    text-align: center;
+    gap: 4px;
+    padding: 12px 0;
+  }
+  
+  /* Mobile layout cho order body */
+  .order-body p:nth-child(1),
+  .order-body p:nth-child(2),
+  .order-body p:nth-child(3),
+  .order-body p:nth-child(4) {
+    grid-column: 1;
+  }
+  
+  .order-body p:nth-child(1) { grid-row: 1; }
+  .order-body p:nth-child(2) { grid-row: 2; }
+  .order-body p:nth-child(3) { grid-row: 3; }
+  .order-body p:nth-child(4) { 
+    grid-row: 4;
+    margin: 16px -24px -16px;
+    padding: 20px 24px;
+  }
+  
+  .order-footer {
+    padding: 16px 24px;
+  }
+  
+  .btn-detail {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .order-title {
+    font-size: 1.7rem;
+  }
+  
+  .order-header h3 {
+    font-size: 1.2rem;
+  }
+  
+  .order-body p {
+    font-size: 0.95rem;
+  }
+  
+  .order-loading,
+  .order-empty {
+    padding: 60px 24px;
+    font-size: 1.1rem;
+    margin: 32px 16px;
+  }
+}
+
+/* 🎨 Custom Scrollbar */
+.order-history-page::-webkit-scrollbar {
+  width: 8px;
+}
+
+.order-history-page::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.order-history-page::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+  border-radius: 4px;
+}
+
+.order-history-page::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+}
+
+/* 🌟 Hover Effects Enhancement */
+.order-card:hover .order-header h3 {
+  color: #1e40af;
+  transition: color 0.3s ease;
+}
+
+.order-card:hover .order-body p:nth-child(4) {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  transition: background 0.3s ease;
+}
+
+/* 📊 Status Icons */
+.status-tag.delivered::before { content: '✅ '; }
+.status-tag.processing::before { content: '🔄 '; }
+.status-tag.pending::before { content: '⏳ '; }
+.status-tag.cancelled::before { content: '❌ '; }

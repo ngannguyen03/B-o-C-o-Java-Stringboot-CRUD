@@ -1,0 +1,351 @@
+/* ===== ORDER PAGE (TỔNG QUAN) ===== */
+.order-page {
+  font-family: "Poppins", sans-serif;
+  background: #f8fafc;
+  min-height: 100vh;
+  padding: 25px 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* ===== CONTAINER (KHUNG CHÍNH) ===== */
+.order-container {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* ===== KHUNG FORM & SUMMARY ===== */
+.order-form,
+.order-summary {
+  flex: 1;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  padding: 25px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* ===== TIÊU ĐỀ ===== */
+.order-form h2,
+.order-summary h3 {
+  color: #1e293b;
+  font-weight: 600;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 16px 0;
+}
+
+/* ===== FORM GROUPS ===== */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #1e40af;
+  margin-bottom: 5px;
+  display: block;
+  font-size: 14px;
+}
+
+/* ===== INPUTS ===== */
+select,
+textarea,
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 9px 11px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.2s;
+  background: #fff;
+}
+
+select:focus,
+textarea:focus,
+input:focus {
+  border-color: #007aff;
+  box-shadow: 0 0 4px rgba(0, 122, 255, 0.3);
+  outline: none;
+}
+
+/* ===== ADD ADDRESS BUTTON ===== */
+.address-select {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-add {
+  background: linear-gradient(135deg, #007aff, #2563eb);
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
+}
+
+.btn-add:hover {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  transform: translateY(-1px);
+}
+
+/* ===== SUBMIT BUTTON ===== */
+.btn-submit {
+  background: linear-gradient(135deg, #007aff, #2563eb);
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 15px;
+  transition: 0.3s;
+  box-shadow: 0 3px 10px rgba(37, 99, 235, 0.25);
+}
+
+.btn-submit:hover {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  transform: translateY(-1px);
+}
+
+/* ===== ORDER SUMMARY ===== */
+.order-summary {
+  background: #f9fafb;
+  padding: 30px;
+}
+
+.summary-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.product-details h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 4px;
+}
+
+.product-meta {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 6px;
+  display: flex;
+  gap: 14px;
+}
+
+.item-total {
+  font-size: 14px;
+  color: #111;
+  font-weight: 500;
+}
+
+/* ===== TỔNG KẾT ===== */
+.summary-total {
+  margin-top: 20px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 15px 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  font-size: 14px;
+  border-left: 4px solid #007aff;
+}
+
+.summary-total p {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0;
+  color: #475569;
+}
+
+.summary-total h4 {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  display: flex;
+  justify-content: space-between;
+}
+
+.summary-total .final-total {
+  color: #1d4ed8;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* ===== DISCOUNT SECTION ===== */
+.discount-section {
+  margin-top: 15px;
+}
+
+.discount-section label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #1e3a8a;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.discount-section input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.discount-section input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 3px rgba(37, 99, 235, 0.3);
+}
+
+/* ===== MODAL (THÊM ĐỊA CHỈ) ===== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 16px;
+  width: 420px;
+  max-width: 95%;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.modal-header h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #64748b;
+}
+
+.modal input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  gap:15px;
+}
+
+.btn-save {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-save:hover {
+  background: #1d4ed8;
+}
+
+.btn-cancel {
+  background: #e2e8f0;
+  border: none;
+  color: #475569;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-cancel:hover {
+  background: #cbd5e1;
+}
+
+/* ===== LOADING & EMPTY ===== */
+.loading {
+  text-align: center;
+  font-size: 15px;
+  color: #555;
+  margin-top: 100px;
+}
+
+.empty-cart {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 100px;
+  color: #555;
+}
+
+.empty-cart button {
+  background: #007aff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin-left: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.empty-cart button:hover {
+  background: #1d4ed8;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .order-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .order-form,
+  .order-summary {
+    width: 100%;
+    padding: 20px;
+  }
+}

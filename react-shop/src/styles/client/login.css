@@ -1,0 +1,149 @@
+/* 🌟 Nền tổng thể */
+.login-container,
+.register-container {
+  font-family: "Playfair Display", "Georgia", serif;
+  background: linear-gradient(145deg, #f9f9f8, #f3f1ee);
+  color: #111;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+}
+
+/* 💎 Khung form */
+form {
+  background: #ffffff;
+  padding: 50px 60px;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 380px;
+  border: 1px solid #e8e5e1;
+  transition: all 0.4s ease;
+  animation: fadeUp 0.7s ease both;
+}
+
+form:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.12);
+}
+
+/* 🖋️ Tiêu đề */
+.login-container h2,
+.register-container h2 {
+  font-size: 2rem;
+  color: #111;
+  margin-bottom: 35px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+}
+
+.login-container h2::after,
+.register-container h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 60px;
+  height: 2px;
+  background: #111;
+  transform: translateX(-50%);
+}
+
+/* 🧾 Label + input */
+form label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 6px;
+  color: #333;
+  letter-spacing: 0.5px;
+}
+
+form input {
+  width: 100%;
+  padding: 10px 6px;
+  border: none;
+  border-bottom: 1px solid #bfb9b0;
+  background: transparent;
+  font-size: 1.05rem;
+  color: #111;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: "Cormorant Garamond", serif;
+}
+
+form input:focus {
+  border-bottom: 1px solid #111;
+  background: #fdfcfb;
+}
+
+/* Khoảng cách giữa các field */
+form div {
+  margin-bottom: 25px;
+}
+
+/* 🔴 Lỗi */
+.error {
+  color: #b91c1c;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 18px;
+  font-family: "Georgia", serif;
+}
+
+/* 🖤 Nút */
+button[type="submit"] {
+  background: linear-gradient(135deg, #111, #2b2b2b);
+  color: #fffdf8;
+  border: none;
+  padding: 14px 36px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(135deg, #000, #3a3a3a);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* 🔗 Liên kết */
+a {
+  color: #111;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  border-color: #111;
+}
+
+/* 🎀 Đoạn chữ phụ */
+form p {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #444;
+  margin-top: 18px;
+}
+
+/* 🌤️ Hiệu ứng nhẹ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

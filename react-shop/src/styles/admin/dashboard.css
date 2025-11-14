@@ -1,0 +1,109 @@
+/* ❄️ Tone trắng xanh ánh bạc hiện đại */
+.dashboard-container.light-mode {
+  background: #f4f7fb; /* trắng pha xanh nhạt */
+  color: #1e293b; /* xanh xám đậm */
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.dashboard-title {
+  text-align: center;
+  color: #1565c0; /* xanh lam chủ đạo */
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+/* Cards grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+/* Card tone trắng – bạc – xanh */
+.stat-card.light {
+  background: linear-gradient(145deg, #ffffff, #e3f2fd);
+  border: 1px solid #d0d7de;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 3px 10px rgba(200, 220, 240, 0.4);
+}
+
+.stat-card.light:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(21, 101, 192, 0.25);
+}
+
+.stat-card .icon {
+  font-size: 2rem;
+  color: #42a5f5; /* xanh nhẹ ánh bạc */
+  margin-bottom: 0.5rem;
+}
+
+/* Chart box */
+.chart-box {
+  background: linear-gradient(145deg, #ffffff, #e8f0fe);
+  border: 1px solid #cfd9df;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem;
+  box-shadow: 0 5px 15px rgba(180, 200, 220, 0.3);
+}
+
+.chart-box h3 {
+  color: #1565c0;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Recent orders */
+.recent-orders {
+  margin-top: 3rem;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #d0d7de;
+  box-shadow: 0 4px 12px rgba(180, 200, 220, 0.25);
+}
+
+.recent-orders table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  color: #1e293b;
+}
+
+.recent-orders th,
+.recent-orders td {
+  padding: 0.8rem;
+  border-bottom: 1px solid #d0d7de;
+  text-align: left;
+}
+
+/* Status badges */
+.status-badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  text-transform: capitalize;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.status-badge.completed {
+  background: #4caf50; /* xanh lá nhẹ tươi */
+}
+.status-badge.pending {
+  background: #ffeb3b;
+  color: #111;
+}
+.status-badge.cancelled {
+  background: #e53935;
+}

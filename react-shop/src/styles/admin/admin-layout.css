@@ -1,0 +1,402 @@
+/* 💎 Tone trắng xanh ánh bạc cao cấp */
+.admin-container {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(135deg, #f6f9ff 0%, #e8f0f9 100%);
+  color: #1b2b3a;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.admin-sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, rgba(230, 240, 255, 0.95) 0%, rgba(207, 217, 223, 0.9) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* ✅ đẩy nội dung menu lên trên */
+  padding: 24px 20px;
+  border-right: 1px solid rgba(200, 215, 230, 0.6);
+  box-shadow: 4px 0 18px rgba(150, 170, 200, 0.3);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: all 0.4s ease;
+}
+
+/* Header */
+.sidebar-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar-header h2 {
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+  color: #1976d2;
+  text-shadow: 0 0 8px rgba(21, 101, 192, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.sidebar-header p {
+  font-size: 0.9rem;
+  color: #6b7c8c;
+}
+
+/* ✅ Menu container */
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  list-style: none; /* bỏ dấu chấm tròn */
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation links */
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #2f4f6f;
+  text-decoration: none;
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin: 2px 0;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hiệu ứng ánh bạc di chuyển */
+.nav-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(200, 220, 255, 0.3),
+    rgba(255, 255, 255, 0.5),
+    rgba(200, 220, 255, 0.3)
+  );
+  transition: all 0.6s ease;
+}
+
+.nav-link:hover::before {
+  left: 100%;
+}
+
+.nav-link:hover {
+  background: rgba(179, 229, 252, 0.7);
+  color: #0d47a1;
+  transform: translateX(4px);
+  box-shadow: 0 4px 10px rgba(21, 101, 192, 0.15);
+}
+
+/* Trạng thái đang chọn */
+.nav-link.active {
+  background: linear-gradient(135deg, #bbdefb, #e3f2fd);
+  color: #0d47a1;
+  box-shadow: 0 0 14px rgba(120, 180, 255, 0.4);
+  border: 1px solid rgba(120, 170, 255, 0.4);
+}
+
+/* Logout button */
+.logout-btn {
+  margin-top: auto; /* ✅ đẩy xuống cuối */
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid #90caf9;
+  color: #1565c0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+.logout-btn:hover {
+  background: linear-gradient(135deg, #1565c0, #42a5f5);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(21, 101, 192, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Main content */
+.admin-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background: linear-gradient(135deg, #f9fbfd, #f1f6fa);
+}
+
+/* Header trên cùng */
+.admin-header {
+  /* padding: 20px 40px; */
+  border-bottom: 1px solid #d0d7de;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 12px rgba(150, 170, 200, 0.25);
+  backdrop-filter: blur(10px);
+}
+
+.admin-header h1 {
+  font-size: 1.6rem;
+  color: #1565c0;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.admin-header span {
+  color: #6b7c8c;
+  font-size: 0.9rem;
+
+}
+
+/* Nội dung chính */
+.admin-content {
+  padding: 30px 40px;
+}
+
+
+/* 🔍 ADMIN SEARCH FORM - Luxury Jewelry Style */
+.admin-search-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 4px;
+  box-shadow: 
+    0 2px 10px rgba(135, 206, 250, 0.15),
+    inset 0 1px 2px rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(173, 216, 230, 0.4);
+  transition: all 0.3s ease;
+  flex: 0 1 350px;
+}
+
+.admin-search-form:focus-within {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 4px 15px rgba(70, 130, 180, 0.25),
+    inset 0 1px 2px rgba(255, 255, 255, 0.9);
+  border-color: #87ceeb;
+}
+
+.admin-search-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  flex: 1;
+  margin-bottom: 0 !important;
+}
+
+.admin-search-icon {
+  color: #87ceeb;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.admin-search-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  border: #f8fdff !important;
+  font-size: 0.9rem;
+  font-family: "Cormorant Garamond", serif;
+  color: #2f4f4f;
+  padding: 8px 0;
+  width: 100% !important;
+  height: 18px !important;
+  min-width: 170px !important;
+}
+
+.admin-search-input::placeholder {
+  color: #a0b9c8;
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
+/* Search Button - Fixed Style */
+.admin-search-btn {
+  background: linear-gradient(135deg, #87ceeb, #4682b4) !important;
+  border: none;
+  color: white;
+  padding: 8px 16px !important;
+  border-radius: 26px !important;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: "Cormorant Garamond", serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(70, 130, 180, 0.25);
+  font-size: 0.6rem !important;
+  white-space: nowrap;
+  min-width: 80px !important;
+  height:35px !important;
+  margin-left: -15px !important;
+}
+
+.admin-search-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(70, 130, 180, 0.35);
+  background: linear-gradient(135deg, #4682b4, #5f9ea0);
+}
+
+/* 🔍 ADMIN SEARCH FORM VARIATIONS */
+/* Compact version for smaller screens */
+.admin-search-form.compact {
+  flex: 0 1 280px;
+}
+
+.admin-search-form.compact .admin-search-input {
+  min-width: 120px;
+  font-size: 0.85rem;
+}
+
+.admin-search-form.compact .admin-search-btn {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  min-width: 70px;
+}
+
+/* Expanded version for larger screens */
+.admin-search-form.expanded {
+  flex: 0 1 400px;
+}
+
+.admin-search-form.expanded .admin-search-input {
+  min-width: 220px;
+  font-size: 0.95rem;
+}
+
+/* Search form without button (icon only) */
+.admin-search-form.icon-only {
+  padding: 4px 12px;
+}
+
+.admin-search-form.icon-only .admin-search-btn {
+  display: none;
+}
+
+/* Search form focus states */
+.admin-search-input:focus {
+  background: transparent;
+}
+
+.admin-search-input:focus::placeholder {
+  color: #87ceeb;
+}
+
+/* Admin Header với search */
+.admin-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px 30px;
+}
+
+.admin-welcome {
+  flex: 1;
+}
+
+.admin-welcome h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  color: #2f4f4f;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.admin-welcome span {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1rem;
+  color: #5f9ea0;
+  font-style: italic;
+}
+
+/* 🔍 ADMIN SEARCH FORM RESPONSIVE */
+@media (max-width: 1024px) {
+  .admin-search-form {
+    flex: 0 1 300px;
+  }
+  
+  .admin-search-input {
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-header-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    padding: 15px 20px;
+  }
+  
+  .admin-search-form {
+    flex: 1;
+    min-width: auto;
+  }
+  
+  .admin-welcome h1 {
+    font-size: 1.7rem;
+  }
+  
+  .admin-welcome span {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 568px) {
+  .admin-search-form {
+    flex: 1;
+  }
+  
+  .admin-search-input {
+    min-width: 120px;
+    font-size: 0.85rem;
+  }
+  
+  .admin-search-btn {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    min-width: 60px;
+  }
+  
+  .admin-welcome h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-header-content {
+    padding: 12px 15px;
+  }
+  
+  .admin-search-form {
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    border-radius: 15px;
+  }
+  
+  .admin-search-container {
+    width: 100%;
+  }
+  
+  .admin-search-btn {
+    margin-left: 0 !important;
+    width: 100%;
+    border-radius: 12px;
+  }
+}
