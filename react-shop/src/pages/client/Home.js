@@ -291,11 +291,7 @@ const toggleFavorite = async (product) => {
         <div className="banner-container">
           {banners.map((banner, index) => (
             <a key={banner.id} href={banner.target_url || "#"} className="banner-link">
-              <img
-                src={`${API_BASE_URL}${banner.image_url}`}
-                alt={banner.title}
-                className={`banner-image ${index === currentBanner ? 'active' : ''}`}
-              />
+              
             </a>
           ))}
           <div className="banner-text">

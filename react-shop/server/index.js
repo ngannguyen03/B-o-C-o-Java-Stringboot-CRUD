@@ -1,36 +1,35 @@
 import express from "express";
+import "dotenv/config";
 import cors from "cors";
-import dotenv from "dotenv";
-import OpenAI from "openai";
-
-dotenv.config();
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ⭐ DeepSeek dùng SDK OpenAI nhưng đổi baseURL
-const client = new OpenAI({
-  apiKey: process.env.DEEPSEEK_API_KEY,
-  baseURL: "https://api.deepseek.com",  // quan trọng!
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+
+// 🔥 Dùng model ổn định nhất
+const model = genAI.getGenerativeModel({
+  model: "gemini-pro"
 });
 
-app.post("/ai", async (req, res) => {
+app.post("/gemini", async (req, res) => {
   try {
-    const { message } = req.body;
+    const { prompt } = req.body;
+    console.log("📩 User prompt:", prompt);
 
-    const completion = await client.chat.completions.create({
-      model: "deepseek-chat",  // model FREE của DeepSeek
-      messages: [{ role: "user", content: message }],
-    });
+    const result = await model.generateContent(prompt);
+    const text = result.response.text();
 
-    res.json({ reply: completion.choices[0].message.content });
+    res.json({ reply: text });
+
   } catch (err) {
-    console.error("🔥 SERVER AI ERROR:", err);
+    console.error("🔥 GEMINI SERVER ERROR:", err);
     res.status(500).json({ error: err.message });
   }
 });
 
-app.listen(3001, () =>
-  console.log("🚀 DeepSeek AI Server running on 3001")
-);
+app.listen(3001, () => {
+  console.log("🚀 Gemini AI Server running on port 3001");
+});
